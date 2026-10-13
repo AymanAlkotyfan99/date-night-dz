@@ -1,0 +1,10 @@
+# يوضع هذا الملف بجانب مجلد dist في جذر المستودع.
+# في لوحة Render: New > Blueprint، ثم اختر مستودع GitHub.
+services:
+  - type: web
+    name: date-night-trap
+    runtime: static
+    branch: main
+    buildCommand: echo "Static site ready"
+    staticPublishPath: ./dist
+    autoDeployTrigger: commit
