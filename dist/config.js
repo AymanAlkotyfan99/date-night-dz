@@ -3,7 +3,7 @@
 window.DATE_CONFIG = {
   version: '1.0',
   title: 'وزارة الطلعات والشؤون الزوجية',
-  husbandName: '', wifeName: '', wifePhone: '963949330851', soundDefault: false,
+  husbandName: '', wifeName: '', wifePhone: '', soundDefault: false,
   branding: { credit: 'A LITTLE LOVE, A LITTLE DRAMA', coral: '#FF718F', lavender: '#B79AF5' },
   opening: {
     label: 'استدعاء رسمي من الإدارة العليا',
