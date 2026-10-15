@@ -1,9 +1,9 @@
 /* Personalize this file. Bump version after changing the invitation.
    WhatsApp: international digits only, no +, spaces, or leading 00. */
 window.DATE_CONFIG = {
-  version: '1.2',
+  version: '1.3',
   title: 'وزارة الطلعات والشؤون الزوجية',
-  husbandName: '', wifeName: '', wifePhone: '963996831623', soundDefault: false,
+  husbandName: '', wifeName: '', wifePhone: '96170661719', soundDefault: false,
   branding: { credit: 'A LITTLE LOVE, A LITTLE DRAMA', coral: '#FF718F', lavender: '#B79AF5' },
   opening: {
     label: 'استدعاء رسمي من الإدارة العليا',
@@ -20,29 +20,29 @@ window.DATE_CONFIG = {
     warning: 'نسبة نجاح خيار لا: 0%… بس منقدّر إصرارك',
   },
   stages: [
-    { id: 'day', short: 'اليوم', icon: '📅', title: 'إمتى بدك نطلع يا روحي؟', subtitle: 'اختار اليوم المناسب… وفكّر منيح قبل ما تجاوب 🙂', correctIds: ['sat', 'sun'], success: 'هييييك! شايف لما بتستخدم إحساسك؟ 😍', animation: 'bounce', emotion: 'happy', options: [
+    { id: 'day', short: 'اليوم', icon: '📅', title: 'إمتى بدك نطلع يا روحي؟', subtitle: 'اختار اليوم المناسب… وفكّر منيح قبل ما تجاوب 🙂', correctId: 'sun', success: 'هييييك! شايف لما بتستخدم إحساسك؟ 😍', animation: 'bounce', emotion: 'happy', options: [
       { id: 'thu', label: 'الخميس', icon: '🗓️', note: 'نسبق الويكند', emotion: 'suspicious', reaction: 'shake', messages: ['الخميس؟ يعني ما عندك وقت غير لما أكون مشغولة؟ 🙂', 'بعدك مصرّ عالخميس؟ رزنامتك غير رزنامتي؟ 😂', 'الخميس عندي موعد مع تأجيل طلعة الخميس 😌'] },
-      { id: 'fri', label: 'الجمعة', icon: '🌷', note: 'على رواق', emotion: 'suspicious', reaction: 'shake', messages: ['الجمعة؟ خلّينا السبت أو الأحد يا روحي 😌', 'رجعت للجمعة؟ رزنامة الحب بدها تحديث 😂', 'خلّينا نترك الجمعة للشوق يا روحي 🙂'] },
-      { id: 'sat', label: 'السبت', icon: '☀️', note: 'آخر الأسبوع', emotion: 'happy', reaction: 'bounce', messages: [] },
+      { id: 'fri', label: 'الجمعة', icon: '🌷', note: 'على رواق', emotion: 'suspicious', reaction: 'shake', messages: ['الجمعة؟ خلّينا الأحد يا روحي 😌', 'رجعت للجمعة؟ رزنامة الحب بدها تحديث 😂', 'خلّينا نترك الجمعة للشوق يا روحي 🙂'] },
+      { id: 'sat', label: 'السبت', icon: '☀️', note: 'آخر الأسبوع', emotion: 'suspicious', reaction: 'shake', messages: ['السبت؟ قلبي حاجز الأحد يا روحي 😌', 'خلّينا السبت نختار الفيلم وبالأحد نحضرو 😂', 'بعدك مصرّ عالسبت؟ جرّب اليوم اللي بعده 🙂'] },
       { id: 'sun', label: 'الأحد', icon: '☁️', note: 'بداية حلوة', emotion: 'happy', reaction: 'bounce', messages: [] }
     ] },
-    { id: 'place', short: 'المكان', icon: '📍', title: 'طيب وين بدك تاخدني؟', subtitle: 'هون بدنا نشوف إذا بتعرف ذوقي عنجد 😌', correctId: 'cafe', success: 'شاااطر! والله إنك بتفهمني 😍', animation: 'bounce', emotion: 'proud', options: [
-      { id: 'restaurant', label: 'مطعم', icon: '🍽️', note: 'دلع وعشا', emotion: 'suspicious', reaction: 'tilt', messages: ['مطعم؟ اليوم نفسي بقعدة كافيه وحكي معك 😌', 'العشا بيستنى… القهوة عم تناديني 😂', 'يا روحي اليوم الموعد مع فنجان وحكاية 🙂'] },
-      { id: 'cafe', label: 'كافيه', icon: '☕', note: 'قهوة وحكي', emotion: 'happy', reaction: 'bounce', messages: [] },
-      { id: 'cinema', label: 'سينما', icon: '🎬', note: 'فيلم وبوشار', emotion: 'shocked', reaction: 'shake', messages: ['آهاا يعني بدك ساعتين ما تحكي معي؟ فهمت عليك 😂', 'رجعت اخترت السينما؟ هيك بدك تهرب مني؟ 😂', 'الفيلم الحقيقي هو محاولاتك تقنعني بالسينما 😭'] },
-      { id: 'park', label: 'حديقة', icon: '🌳', note: 'هوا وتغيير جو', emotion: 'exhausted', reaction: 'tilt', messages: ['حديقة؟ يعني بدك تتمشّيني مشان ما تدفع؟ مكشوفة 😭', 'الشجر حلو بس ما عندو منيو يا روحي 😂', 'منمشي بعد القهوة… اتفقنا؟ 🙂'] }
+    { id: 'place', short: 'المكان', icon: '📍', title: 'طيب وين بدك تاخدني؟', subtitle: 'هون بدنا نشوف إذا بتعرف ذوقي عنجد 😌', correctId: 'cinema', success: 'شاااطر! والله إنك بتفهمني 😍', animation: 'bounce', emotion: 'proud', options: [
+      { id: 'restaurant', label: 'مطعم', icon: '🍽️', note: 'دلع وعشا', emotion: 'suspicious', reaction: 'tilt', messages: ['مطعم؟ اليوم نفسي بفيلم وبوشار 😌', 'العشا بيستنى… شاشة السينما عم تناديني 😂', 'يا روحي اليوم بدنا تذاكر مو حجز طاولة 🙂'] },
+      { id: 'cafe', label: 'كافيه', icon: '☕', note: 'قهوة وحكي', emotion: 'suspicious', reaction: 'tilt', messages: ['كافيه؟ اليوم بدي سينما يا روحي 😌', 'القهوة لبعدين… الفيلم ما رح يستنانا 😂', 'خلّي الحكي بعد الفيلم، اتفقنا؟ 🙂'] },
+      { id: 'cinema', label: 'سينما', icon: '🎬', note: 'فيلم وبوشار', emotion: 'happy', reaction: 'bounce', messages: [] },
+      { id: 'park', label: 'حديقة', icon: '🌳', note: 'هوا وتغيير جو', emotion: 'exhausted', reaction: 'tilt', messages: ['حديقة؟ يعني بدك تتمشّيني مشان ما تدفع؟ مكشوفة 😭', 'الشجر حلو بس ما عندو منيو يا روحي 😂', 'منمشي بعد الفيلم… اتفقنا؟ 🙂'] }
     ] },
-    { id: 'food', short: 'الأكل', icon: '🌯', title: 'شو رح تطعمني يا حبيبي؟', subtitle: 'دير بالك… هاد أهم قرار لحد هلق 😂', correctId: 'shawarma', success: 'يا عيني عليك! هيك الواحد بيعرف شو بحب 😍', animation: 'bounce', emotion: 'happy', options: [
-      { id: 'shawarma', label: 'شاورما', icon: '🌯', note: 'الحب مع زيادة ثوم', emotion: 'happy', reaction: 'bounce', messages: [] },
-      { id: 'pizza', label: 'بيتزا', icon: '🍕', note: 'قطعة إلك… والباقي إلي', emotion: 'suspicious', reaction: 'shake', messages: ['بيتزا؟ اليوم قلبي طالب شاورما 😌', 'حتى لو زدنا الجبنة… الجواب لسا لأ 😂', 'خلّي البيتزا لطلعة تانية يا روحي 🙂'] },
-      { id: 'burger', label: 'برغر', icon: '🍔', note: 'موعد دبل', emotion: 'angry', reaction: 'tilt', messages: ['برغر؟ حلو بس مو اللي نفسي فيه 😒', 'حتى لو دبل… الجواب لسا لأ 😂', 'قلبي مو بين خبزتين يا روحي 🙂'] },
-      { id: 'sushi', label: 'سوشي', icon: '🍣', note: 'شي مختلف', emotion: 'shocked', reaction: 'shake', messages: ['سوشي؟ حبيبي نحنا بطلعة مو بتحدي أكل 😭', 'أنا بدي شاورما، مو امتحان عيدان 😂', 'خلّينا نطبخ القرار شوي قبل ما ناكلو نيّ 😌'] }
+    { id: 'food', short: 'الأكل', icon: '🍿', title: 'شو رح تطعمني يا حبيبي؟', subtitle: 'دير بالك… هاد أهم قرار لحد هلق 😂', correctId: 'popcorn', success: 'يا عيني عليك! هيك الواحد بيعرف شو بحب 😍', animation: 'bounce', emotion: 'happy', options: [
+      { id: 'nuts', label: 'مكسرات', icon: '🥜', note: 'قرمشة عالخفيف', emotion: 'suspicious', reaction: 'shake', messages: ['مكسرات؟ حلوة بس الفيلم بدو بوشار 😌', 'القرمشة صح… بس النوع مو اللي ببالي 😂', 'خلّي المكسرات لبعدين يا روحي 🙂'] },
+      { id: 'popcorn', label: 'بوشار', icon: '🍿', note: 'رفيق الفيلم', emotion: 'happy', reaction: 'bounce', messages: [] },
+      { id: 'juice', label: 'عصير', icon: '🧃', note: 'رشفة منعشة', emotion: 'angry', reaction: 'tilt', messages: ['عصير؟ بدي شي قرمشو وأنا عم احضر 😌', 'العصير ما بيعوّض علبة البوشار 😂', 'قربت من الكشك… بس اختار البوشار يا روحي 🙂'] },
+      { id: 'cookies', label: 'كوكيز', icon: '🍪', note: 'لقمة حلوة', emotion: 'shocked', reaction: 'shake', messages: ['كوكيز؟ إنت الحلو… أنا بدي بوشار 😌', 'الفيلم ناقصه بوشار مو بسكوت 😂', 'خلّي الكوكيز لطلعة تانية يا روحي 🙂'] }
     ] },
-    { id: 'time', short: 'الوقت', icon: '⏰', title: 'وعلى كم الساعة سعادتك؟', subtitle: 'دير بالك تختار وقت يخليني استناك 🙂', correctId: 'three', success: 'هيييي! أخيراً وصلت للجواب الصح 😍', animation: 'bounce', emotion: 'proud', options: [
-      { id: 'three', label: '3:00 العصر', icon: '🕒', note: 'قعدة عالعصر', emotion: 'happy', reaction: 'bounce', messages: [] },
-      { id: 'six', label: '6:00 المسا', icon: '🕕', note: 'قبل الغروب', emotion: 'angry', reaction: 'tilt', messages: ['ستة؟ ليش ننطر للمسا يا روحي؟ 😭', 'عالتلاتة بكون جاهزة وناطرة الطلعة 😂', 'خلّينا نلحق قعدة العصر الحلوة 😌'] },
-      { id: 'seven', label: '7:00 المسا', icon: '🕖', note: 'أول السهرة', emotion: 'suspicious', reaction: 'shake', messages: ['سبعة؟ كتير متأخر على طلعتنا 😌', 'قلبي حاجز عالتلاتة يا حبيبي 😂', 'بدي شوفك العصر… لا تأجّل الفرحة 🙂'] },
-      { id: 'nine', label: '9:00 المسا', icon: '🕘', note: 'سهرة طويلة', emotion: 'exhausted', reaction: 'shake', messages: ['تسعة؟ رح تخلّيني ناطرة كل هالوقت؟ 😭', 'موعدنا عالتلاتة… مو آخر النهار 😂', 'خلّي السهرة لبعدين، اليوم طلعتنا العصر 😌'] }
+    { id: 'time', short: 'الوقت', icon: '⏰', title: 'وعلى كم الساعة سعادتك؟', subtitle: 'دير بالك تختار وقت يخليني استناك 🙂', correctId: 'five', success: 'هيييي! أخيراً وصلت للجواب الصح 😍', animation: 'bounce', emotion: 'proud', options: [
+      { id: 'five', label: '5:00 العصر', icon: '🕔', note: 'وقت الفيلم', emotion: 'happy', reaction: 'bounce', messages: [] },
+      { id: 'six', label: '6:00 المسا', icon: '🕕', note: 'قبل الغروب', emotion: 'angry', reaction: 'tilt', messages: ['ستة؟ هيك بيفوتنا أول الفيلم 😭', 'عالخمسة بكون جاهزة وناطرة الطلعة 😂', 'بدنا نلحق الفيلم من أوله يا روحي 😌'] },
+      { id: 'seven', label: '7:00 المسا', icon: '🕖', note: 'أول السهرة', emotion: 'suspicious', reaction: 'shake', messages: ['سبعة؟ كتير متأخر على طلعتنا 😌', 'قلبي حاجز عالخمسة يا حبيبي 😂', 'بدي شوفك العصر… لا تأجّل الفرحة 🙂'] },
+      { id: 'nine', label: '9:00 المسا', icon: '🕘', note: 'سهرة طويلة', emotion: 'exhausted', reaction: 'shake', messages: ['تسعة؟ رح تخلّيني ناطرة كل هالوقت؟ 😭', 'موعدنا عالخمسة… مو آخر النهار 😂', 'خلّي السهرة لبعدين، اليوم طلعتنا العصر 😌'] }
     ] }
   ],
   comedy: {
