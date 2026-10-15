@@ -6,6 +6,8 @@
   const emotions = ['neutral','suspicious','angry','shocked','happy','exhausted','proud','mischievous'];
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const strings = a => Array.isArray(a) && a.length > 0 && a.every(v => typeof v === 'string' && v.trim());
+  const correctIds = stage => stage.correctIds ?? [stage.correctId];
+  const isCorrect = (stage, id) => correctIds(stage).includes(id);
   function validate() {
     const errors = [];
     if (!C || !C.version || !C.title) return ['Missing configuration, title, or version.'];
@@ -18,10 +20,14 @@
         if (!s.id || !s.title || !s.short || !s.success) errors.push(`Stage ${s.id}: required content missing.`);
         if (!Array.isArray(s.options) || s.options.length < 2) { errors.push(`Stage ${s.id}: at least two options required.`); return; }
         if (new Set(s.options.map(o => o.id)).size !== s.options.length) errors.push(`Stage ${s.id}: duplicate option IDs.`);
-        if (!s.options.some(o => o.id === s.correctId)) errors.push(`Stage ${s.id}: correctId does not exist.`);
+        const accepted = correctIds(s);
+        if (!strings(accepted) || new Set(accepted).size !== accepted.length || !accepted.every(id => s.options.some(o => o.id === id))) {
+          errors.push(`Stage ${s.id}: correctId/correctIds must reference existing, unique option IDs.`);
+          return;
+        }
         s.options.forEach(o => {
           if (!o.id || !o.label) errors.push(`Stage ${s.id}: option needs ID and label.`);
-          if (o.id !== s.correctId && (!strings(o.messages) || o.messages.length < 3)) errors.push(`${s.id}/${o.id}: three incorrect responses required.`);
+          if (!isCorrect(s,o.id) && (!strings(o.messages) || o.messages.length < 3)) errors.push(`${s.id}/${o.id}: three incorrect responses required.`);
           if (!emotions.includes(o.emotion)) errors.push(`${s.id}/${o.id}: unknown emotion.`);
         });
       });
@@ -37,14 +43,14 @@
     console.error('Date Night configuration:', errors); return;
   }
   // A content fingerprint also invalidates saved answers when version was not bumped.
-  const signature = JSON.stringify([C.version,C.stages.map(s => [s.id,s.correctId,s.options.map(o => [o.id,o.label])])]);
+  const signature = JSON.stringify([C.version,C.stages.map(s => [s.id,correctIds(s),s.options.map(o => [o.id,o.label])])]);
   const blank = () => ({signature,accepted:false,answers:[],noAttempts:0,optionAttempts:{},stageAttempts:{},wrong:0,events:[],sound:Boolean(C.soundDefault)});
   const count = n => Number.isSafeInteger(n) && n >= 0 && n < 1000000;
   function restore() {
     try {
       const s = JSON.parse(localStorage.getItem(KEY));
       if (!s || s.signature !== signature || typeof s.accepted !== 'boolean' || !Array.isArray(s.answers) || s.answers.length > 4 || (!s.accepted && s.answers.length)) return blank();
-      if (!s.answers.every((id,i) => id === C.stages[i].correctId)) return blank();
+      if (!s.answers.every((id,i) => isCorrect(C.stages[i],id))) return blank();
       if (![s.noAttempts,s.wrong].every(count) || !s.optionAttempts || !s.stageAttempts || !Array.isArray(s.events)) return blank();
       if (![...Object.values(s.optionAttempts),...Object.values(s.stageAttempts)].every(count)) return blank();
       if (Object.values(s.optionAttempts).reduce((a,b)=>a+b,0) !== s.wrong || Object.values(s.stageAttempts).reduce((a,b)=>a+b,0) !== s.wrong) return blank();
@@ -133,7 +139,7 @@
     if(locked||index!==state.answers.length||screen!=='STAGE')return;
     const feedback=app.querySelector('.feedback');
     app.querySelectorAll('.option').forEach(b=>b.classList.remove('rejected','shake','tilt','bounce'));
-    if(o.id===s.correctId){
+    if(isCorrect(s,o.id)){
       locked=true;state.answers.push(o.id);save();button.classList.add('approved',s.animation||'bounce');
       app.querySelectorAll('.option').forEach(b=>b.disabled=true);setEmotion(s.emotion);feedback.classList.add('success');feedback.textContent=`معتمد ✓ — ${s.success}`;
       app.querySelector('.speech').textContent=state.stageAttempts[s.id]?C.comedy.confidence:s.success;
